@@ -5,11 +5,11 @@
         /*
          * Angular modules
          */
-        'ngResource'
 
         /*
          * Our reusable cross app code modules
          */
+        'btford.socket-io'
 
         /*
          * 3rd Party modules

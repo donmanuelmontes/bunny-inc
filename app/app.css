@@ -1,30 +1,47 @@
 /* app css stylesheet */
 
-.menu {
-  list-style: none;
-  border-bottom: 0.1em solid black;
-  margin-bottom: 2em;
-  padding: 0 0 0.5em;
+.twitter-logo-white {
+	height: 20px;
 }
 
-.menu:before {
-  content: "[";
+.form-inline {
+    background-color: #ebebeb;
+    padding: 15px 10px;
+    margin-bottom: 20px;
+}
+.form-inline .btn {
+	background-color: #3498db;
 }
 
-.menu:after {
-  content: "]";
+.panel-default > .panel-heading {
+	background-color: #fff;
+	padding: 20px 30px 0;
+	border-bottom: none;
+}
+.panel-heading .profile-image {
+	float: left;
+	margin-right: 10px;
+}
+.panel-heading .profile-name {
+	font-weight: bold;
+    font-size: 16px;	
+}
+.panel-heading .profile-username {
+    font-size: 12px;
+	color: #55acee;
+}
+.panel-heading .twitter-logo {
+	height: 50px;
 }
 
-.menu > li {
-  display: inline;
+.panel-body {
+	font-size: 16px;
+	padding: 10px 30px;
 }
 
-.menu > li:before {
-  content: "|";
-  padding-right: 0.3em;
-}
-
-.menu > li:nth-child(1):before {
-  content: "";
-  padding: 0;
+.panel-footer {
+	background-color: #fff;
+	border-top: none;
+	padding: 0px 30px 20px;
+	color: gray;
 }

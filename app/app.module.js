@@ -4,6 +4,5 @@
   angular.module('bunnyApp', [
     'bunnyApp.core',
     'bunnyApp.nowplaying'
-  ]).
-
+  ]);
 })();

@@ -1,1 +1,43 @@
-<p>This is the partial for view 1.</p>
+<div data-ng-controller="NowPlaying">
+  <div class="container">
+    <h1>#nowplaying in {{city}}</h1>
+
+    <hr/>
+
+    <form class="form-inline" role="form">
+      <div class="form-group">
+        <label for="videoURL">Video URL:</label>
+        <input type="text" class="form-control" id="videoUrl" ng-model="video">
+      </div>
+      <div class="form-group">
+        <label for="videoComment">Comment:</label>
+        <input type="text" class="form-control" id="videoComment" ng-model="comment">
+      </div>
+      <button type="submit" class="btn" ng-click="tweet()">
+        <img src="images/twitter_white.png" class="twitter-logo-white">
+        #Tweet to #nowPlaying
+      </button>
+    </form>
+
+    <div class="panel panel-default" data-ng-repeat="tweet in tweets">
+      <div class="panel-heading">
+        <div class="row">
+          <div class="col-md-4">
+            <img ng-src="{{tweet.user.profile_image_url_https}}" class="profile-image">
+            <div class="profile-name">{{tweet.user.name}}</div>
+            <div class="profile-username">@{{tweet.user.screen_name}}</div>
+          </div>
+          <div class="col-md-offset-7 col-md-1">
+            <img src="images/twitter.png" class="twitter-logo">
+          </div>
+        </div>      
+      </div>
+      <div class="panel-body">
+        <div>{{tweet.text}}</div>
+      </div>
+      <div class="panel-footer">
+        <div>{{tweet.created_at}}</div>
+      </div>
+    </div>
+  </div>
+</div>

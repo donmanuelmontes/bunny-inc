@@ -2,41 +2,37 @@
 
 /* https://github.com/angular/protractor/blob/master/docs/toc.md */
 
-describe('my app', function() {
+describe('Bunny App', function() {
 
-
-  it('should automatically redirect to /view1 when location hash/fragment is empty', function() {
-    browser.get('index.html');
-    expect(browser.getLocationAbsUrl()).toMatch("/view1");
-  });
-
-
-  describe('view1', function() {
-
+  describe('NowPlaying view', function() {
     beforeEach(function() {
-      browser.get('index.html#/view1');
+      browser.get('index.html');
+      
+      browser.driver.sleep(5000);
     });
 
+    it('should render city name based on browser location', function() {
+      browser.executeScript(mockGeo(4.649812, -74.050417));
 
-    it('should render view1 when user navigates to /view1', function() {
-      expect(element.all(by.css('[ng-view] p')).first().getText()).
-        toMatch(/partial for view 1/);
+      browser.waitForAngular();
+
+      expect(element(by.css('h1')).getText()).toBe('#nowplaying in Bogotá');
     });
+    
+    it('should get five or more tweets', function() {
+      var tweets = element.all(by.repeater('tweet in tweets'));
 
-  });
-
-
-  describe('view2', function() {
-
-    beforeEach(function() {
-      browser.get('index.html#/view2');
-    });
-
-
-    it('should render view2 when user navigates to /view2', function() {
-      expect(element.all(by.css('[ng-view] p')).first().getText()).
-        toMatch(/partial for view 2/);
+      expect(tweets.count()).toBeGreaterThan(4);
     });
 
   });
 });
+
+// Mock the browser navigator.geolocation
+var mockGeo = function (lat, lon) {
+  return 'navigator.geolocation.getCurrentPosition = '
+    + 'function (success, error) {'
+    + 'var position = { "coords" : { "latitude": ' + lat + ', ' + '"longitude": ' + lon + ' } };'
+    + 'success(position);'
+    + '}';
+    }

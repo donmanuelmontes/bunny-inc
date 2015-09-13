@@ -23,7 +23,7 @@
       <div class="panel-heading">
         <div class="row">
           <div class="col-md-4">
-            <img ng-src="{{tweet.user.profile_image_url_https}}" class="profile-image">
+            <img data-ng-src="{{tweet.user.profile_image_url_https}}" class="profile-image">
             <div class="profile-name">{{tweet.user.name}}</div>
             <div class="profile-username">@{{tweet.user.screen_name}}</div>
           </div>
@@ -34,6 +34,7 @@
       </div>
       <div class="panel-body">
         <div>{{tweet.text}}</div>
+        <div>{{tweet.entities.urls[0].display_url.substr(tweet.entities.urls[0].display_url.lastIndexOf('/') + 1)}}</div>
       </div>
       <div class="panel-footer">
         <div>{{tweet.created_at}}</div>

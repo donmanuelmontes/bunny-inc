@@ -6,6 +6,6 @@
     core.factory('socket', socketFactory);
 
     function socketFactory() {
-    	return io.connect('http://localhost:3000');
+    	return io.connect('http://bunny-inc.azurewebsites.net/');
 	}
 })();

@@ -41,7 +41,7 @@ io.on('connection', function(socket) {
  
     // Stream limit has been reached
     stream.on('limit', function(limitMessage) {
-      console.log('Limit for User : ' + socket.id + ' on query ' + q + ' has rechead!');
+      console.log('Limit for User : ' + socket.id + ' on query ' + location + ' has rechead!');
     });
  
     stream.on('warning', function(warning) {
@@ -80,6 +80,7 @@ io.on('connection', function(socket) {
   });
  
 });
- 
-server.listen(3000);
+
+// server.listen(3000);
+server.listen(process.env.PORT);
 console.log('Server listening on port 3000');

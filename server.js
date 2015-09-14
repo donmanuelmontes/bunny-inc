@@ -16,7 +16,7 @@ var T = new Twit({
 });
  
 // Set the app folder as a static folder
-app.use(express.static(path.join(__dirname, '')));
+app.use(express.static(path.join(__dirname, '\app')));
 
 // Set default route to index.html
 app.get('/', function(req, res) {

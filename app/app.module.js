@@ -3,6 +3,6 @@
 
   angular.module('bunnyApp', [
     'bunnyApp.core',
-    'bunnyApp.nowplaying'
+    'bunnyApp.projects'
   ]);
 })();

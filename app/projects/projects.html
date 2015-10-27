@@ -1,0 +1,21 @@
+<div data-ng-controller="Projects">
+  <div class="container">
+    <h1>Voice Bunny API</h1>
+
+    <hr/>
+
+    <form class="form-inline" role="form">
+      <div class="form-group">
+        <label for="script">Script:</label>
+        <input type="text" class="form-control" id="script" ng-model="project.script">
+      </div>
+      <div class="form-group">
+        <label for="title">title:</label>
+        <input type="text" class="form-control" id="title" ng-model="project.title">
+      </div>
+      <button type="submit" class="btn" ng-click="postSpeedy()">
+        Post Speedy
+      </button>
+    </form>
+  </div>
+</div>

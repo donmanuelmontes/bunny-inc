@@ -1,6 +1,6 @@
 {
   "name": "bunny-inc",
-  "description": "Now Playing Prototype",
+  "description": "Voice Bunny API",
   "version": "0.0.1",
   "homepage": "https://github.com/donmanuelmontes/bunny-inc",
   "license": "MIT",
@@ -8,7 +8,6 @@
   "dependencies": {
     "angular": "~1.4.0",
     "angular-mocks": "~1.4.0",
-    "angular-socket-io": "~0.7.0",
     "bootstrap": "~3.3.0"
   }
 }
